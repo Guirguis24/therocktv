@@ -96,10 +96,10 @@ body{font-family:Arial,Helvetica,sans-serif}
     <div class="price-fix magic-price">$55 <span>/ Year</span></div>
     <div class="price-fix dino-price">$45 <span>/ Year</span></div>
 
-    <a class="hotspot magic" href="https://wa.me/19515122172?text=Hello%2C%20I%20want%20Magic%20TV%20%2455/year" data-plan="Magic TV" data-price="$55/year" target="_blank" rel="noopener" aria-label="Order Magic TV"></a>
-    <a class="hotspot dino" href="https://wa.me/19515122172?text=Hello%2C%20I%20want%20DINO%20%2445/year" data-plan="DINO" data-price="$45/year" target="_blank" rel="noopener" aria-label="Order DINO"></a>
-    <a class="hotspot zein" href="https://wa.me/19515122172?text=Hello%2C%20I%20want%20Zein%20%2460/year" data-plan="Zein" data-price="$60/year" target="_blank" rel="noopener" aria-label="Order Zein"></a>
-    <a class="hotspot strong" href="https://wa.me/19515122172?text=Hello%2C%20I%20want%20STRONG%20%2470/year" data-plan="STRONG" data-price="$70/year" target="_blank" rel="noopener" aria-label="Order STRONG"></a>
+    <a class="hotspot magic" href="https://wa.me/19515122172?text=Hello%2C%20I%20want%20to%20order%20the%20Magic%20TV%20package%20for%20%2455/year.%0A%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%A8%D8%A7%D9%82%D8%A9%20Magic%20TV%20%D8%A8%D8%B3%D8%B9%D8%B1%20%2455/year." data-plan="Magic TV" data-price="$55/year" target="_blank" rel="noopener" aria-label="Order Magic TV"></a>
+    <a class="hotspot dino" href="https://wa.me/19515122172?text=Hello%2C%20I%20want%20to%20order%20the%20DINO%20package%20for%20%2445/year.%0A%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%A8%D8%A7%D9%82%D8%A9%20DINO%20%D8%A8%D8%B3%D8%B9%D8%B1%20%2445/year." data-plan="DINO" data-price="$45/year" target="_blank" rel="noopener" aria-label="Order DINO"></a>
+    <a class="hotspot zein" href="https://wa.me/19515122172?text=Hello%2C%20I%20want%20to%20order%20the%20Zein%20package%20for%20%2460/year.%0A%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%A8%D8%A7%D9%82%D8%A9%20Zein%20%D8%A8%D8%B3%D8%B9%D8%B1%20%2460/year." data-plan="Zein" data-price="$60/year" target="_blank" rel="noopener" aria-label="Order Zein"></a>
+    <a class="hotspot strong" href="https://wa.me/19515122172?text=Hello%2C%20I%20want%20to%20order%20the%20STRONG%20package%20for%20%2470/year.%0A%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D8%B7%D9%84%D8%A8%20%D8%A8%D8%A7%D9%82%D8%A9%20STRONG%20%D8%A8%D8%B3%D8%B9%D8%B1%20%2470/year." data-plan="STRONG" data-price="$70/year" target="_blank" rel="noopener" aria-label="Order STRONG"></a>
   </div>
 </div>
 
@@ -128,7 +128,10 @@ function applyLang(l){
   document.getElementById("musicLink").href=wa(lang==="ar"?"مرحباً، أرسل لي تفاصيل قنوات الموسيقى":"Hello, please send me details about music channels");
   document.querySelectorAll("[data-plan]").forEach(a=>{
     const p=a.dataset.plan,price=a.dataset.price;
-    a.href=wa(lang==="ar"?`مرحباً، أريد اشتراك ${p} بسعر ${price}`:`Hello, I want ${p} ${price}`);
+    a.href=wa(
+      `Hello, I want to order the ${p} package for ${price}.\n` +
+      `مرحباً، أريد طلب باقة ${p} بسعر ${price}.`
+    );
   });
 }
 document.getElementById("langBtn").addEventListener("click",()=>applyLang(lang==="en"?"ar":"en"));
