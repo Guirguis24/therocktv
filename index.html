@@ -22,10 +22,10 @@ body{font-family:Arial,Helvetica,sans-serif;color:#fff}
 .hero img{display:block;width:100%;height:auto}
 .panel{display:none;padding:42px 5% 55px;background:linear-gradient(180deg,#071728,#03111f);border-top:1px solid rgba(232,188,78,.25)}
 .panel.open{display:block}
-.panel h2{margin:0 0 10px;color:#f3c84f;font-size:32px;text-align:center}.panel .intro{text-align:center;color:#d9e2ea;max-width:900px;margin:0 auto 28px;line-height:1.6}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1150px;margin:0 auto}.grid.packages{grid-template-columns:repeat(4,1fr)}
+.panel h2{margin:0 0 10px;color:#f3c84f;font-size:32px;text-align:center}.panel .intro{text-align:center;color:#d9e2ea;max-width:1000px;margin:0 auto 28px;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1200px;margin:0 auto}.grid.packages{grid-template-columns:repeat(4,1fr)}
 .card{background:#0a1d31;border:1px solid rgba(232,188,78,.34);border-radius:18px;padding:22px;box-shadow:0 12px 30px rgba(0,0,0,.18)}
-.card h3{color:#f3cf6a;margin:0 0 14px;font-size:21px}.card p,.card li{color:#e5ebf0;line-height:1.65}.card ul{margin:0;padding-inline-start:20px}.price{font-size:30px;font-weight:900;color:#fff;margin:9px 0 16px}.order{display:block;text-align:center;background:#19c463;color:#fff;text-decoration:none;font-weight:900;padding:12px 16px;border-radius:999px}
+.card h3{color:#f3cf6a;margin:0 0 14px;font-size:21px}.card h4{margin:18px 0 8px;color:#fff;font-size:15px}.card p,.card li{color:#e5ebf0;line-height:1.65}.card ul{margin:0;padding-inline-start:20px}.price{font-size:30px;font-weight:900;color:#fff;margin:9px 0 16px}.order{display:block;text-align:center;background:#19c463;color:#fff;text-decoration:none;font-weight:900;padding:12px 16px;border-radius:999px}
 .chiplist{display:flex;flex-wrap:wrap;gap:9px}.chip{background:#102943;border:1px solid #244668;padding:8px 11px;border-radius:999px;font-size:13px}
 .note{max-width:1000px;margin:25px auto 0;color:#aab9c5;text-align:center;font-size:13px;line-height:1.55}
 .contact-card{margin:34px auto 48px;max-width:760px;padding:28px;border:1px solid rgba(232,188,78,.45);border-radius:22px;background:#071421;text-align:center;box-shadow:0 14px 35px rgba(0,0,0,.22)}
@@ -68,29 +68,67 @@ body{font-family:Arial,Helvetica,sans-serif;color:#fff}
   <h2 data-en="Live Channels" data-ar="القنوات المباشرة">Live Channels</h2>
   <p class="intro" data-en="A broad selection of Arabic, U.S. and international television networks. Availability can vary by package and region." data-ar="مجموعة كبيرة من القنوات العربية والأمريكية والعالمية. التوفر قد يختلف حسب الباقة والمنطقة.">A broad selection of Arabic, U.S. and international television networks.</p>
   <div class="grid">
-    <div class="card"><h3 data-en="Arabic Channels" data-ar="القنوات العربية">Arabic Channels</h3><div class="chiplist"><span class="chip">MBC</span><span class="chip">MBC 2</span><span class="chip">MBC 4</span><span class="chip">MBC Action</span><span class="chip">MBC Masr</span><span class="chip">Al Hayah</span><span class="chip">DMC</span><span class="chip">ON</span><span class="chip">CBC</span><span class="chip">Al Nahar</span><span class="chip">Rotana Cinema</span><span class="chip">Rotana Classic</span><span class="chip">Shahid</span><span class="chip">Dubai TV</span><span class="chip">Abu Dhabi TV</span><span class="chip">Al Arabiya</span><span class="chip">Al Jazeera</span><span class="chip">Sky News Arabia</span></div></div>
-    <div class="card"><h3 data-en="U.S. Channels" data-ar="القنوات الأمريكية">U.S. Channels</h3><div class="chiplist"><span class="chip">ABC</span><span class="chip">CBS</span><span class="chip">NBC</span><span class="chip">FOX</span><span class="chip">CNN</span><span class="chip">MSNBC</span><span class="chip">CNBC</span><span class="chip">TNT</span><span class="chip">TBS</span><span class="chip">USA Network</span><span class="chip">FX</span><span class="chip">AMC</span><span class="chip">Discovery</span><span class="chip">History</span><span class="chip">National Geographic</span><span class="chip">Food Network</span><span class="chip">HGTV</span></div></div>
-    <div class="card"><h3 data-en="International Channels" data-ar="القنوات العالمية">International Channels</h3><div class="chiplist"><span class="chip">BBC</span><span class="chip">BBC News</span><span class="chip">France 24</span><span class="chip">DW</span><span class="chip">Euronews</span><span class="chip">TV5MONDE</span><span class="chip">RAI</span><span class="chip">Mediaset</span><span class="chip">RTVE</span><span class="chip">Canal 24 Horas</span><span class="chip">TRT World</span><span class="chip">NHK World</span><span class="chip">Arirang</span></div></div>
+    <div class="card"><h3 data-en="Arabic Channels" data-ar="القنوات العربية">Arabic Channels</h3><div class="chiplist">
+      <span class="chip">MBC 1</span><span class="chip">MBC 2</span><span class="chip">MBC 3</span><span class="chip">MBC 4</span><span class="chip">MBC Action</span><span class="chip">MBC Max</span><span class="chip">MBC Masr</span><span class="chip">MBC Masr 2</span><span class="chip">MBC Drama</span><span class="chip">Shahid</span>
+      <span class="chip">ON</span><span class="chip">ON Drama</span><span class="chip">DMC</span><span class="chip">DMC Drama</span><span class="chip">CBC</span><span class="chip">CBC Drama</span><span class="chip">Al Hayah</span><span class="chip">Al Hayah Drama</span><span class="chip">Al Nahar</span><span class="chip">Al Nahar Drama</span>
+      <span class="chip">Rotana Cinema</span><span class="chip">Rotana Classic</span><span class="chip">Rotana Drama</span><span class="chip">Rotana Khalijiah</span><span class="chip">Rotana Music</span><span class="chip">Dubai TV</span><span class="chip">Dubai One</span><span class="chip">Sama Dubai</span><span class="chip">Abu Dhabi TV</span><span class="chip">Emarat TV</span>
+      <span class="chip">Al Arabiya</span><span class="chip">Al Hadath</span><span class="chip">Al Jazeera</span><span class="chip">Al Jazeera Mubasher</span><span class="chip">Sky News Arabia</span><span class="chip">Asharq News</span><span class="chip">Al Qahera News</span><span class="chip">Al Araby</span><span class="chip">Al Araby 2</span><span class="chip">Al Jadeed</span>
+      <span class="chip">LBCI</span><span class="chip">MTV Lebanon</span><span class="chip">OTV Lebanon</span><span class="chip">NBN</span><span class="chip">Jordan TV</span><span class="chip">Roya TV</span><span class="chip">Kuwait TV</span><span class="chip">Qatar TV</span><span class="chip">Oman TV</span><span class="chip">Bahrain TV</span>
+    </div></div>
+
+    <div class="card"><h3 data-en="U.S. Channels" data-ar="القنوات الأمريكية">U.S. Channels</h3><div class="chiplist">
+      <span class="chip">ABC</span><span class="chip">CBS</span><span class="chip">NBC</span><span class="chip">FOX</span><span class="chip">PBS</span><span class="chip">CW</span><span class="chip">CNN</span><span class="chip">CNN International</span><span class="chip">MSNBC</span><span class="chip">CNBC</span><span class="chip">NewsNation</span><span class="chip">Weather Channel</span>
+      <span class="chip">TNT</span><span class="chip">TBS</span><span class="chip">USA Network</span><span class="chip">FX</span><span class="chip">FXX</span><span class="chip">AMC</span><span class="chip">A&E</span><span class="chip">Bravo</span><span class="chip">E!</span><span class="chip">Syfy</span><span class="chip">Paramount Network</span><span class="chip">Comedy Central</span>
+      <span class="chip">Discovery</span><span class="chip">History</span><span class="chip">National Geographic</span><span class="chip">Nat Geo Wild</span><span class="chip">Animal Planet</span><span class="chip">Science Channel</span><span class="chip">Food Network</span><span class="chip">HGTV</span><span class="chip">Travel Channel</span><span class="chip">TLC</span><span class="chip">Lifetime</span><span class="chip">Hallmark Channel</span>
+      <span class="chip">Nickelodeon</span><span class="chip">Nick Jr.</span><span class="chip">Cartoon Network</span><span class="chip">Disney Channel</span><span class="chip">Disney XD</span><span class="chip">Freeform</span><span class="chip">BET</span><span class="chip">MTV</span><span class="chip">VH1</span><span class="chip">CMT</span>
+    </div></div>
+
+    <div class="card"><h3 data-en="International Channels" data-ar="القنوات العالمية">International Channels</h3><div class="chiplist">
+      <span class="chip">BBC One</span><span class="chip">BBC Two</span><span class="chip">BBC News</span><span class="chip">ITV 1</span><span class="chip">ITV 2</span><span class="chip">Channel 4</span><span class="chip">Channel 5</span><span class="chip">Sky News</span><span class="chip">France 2</span><span class="chip">France 3</span><span class="chip">France 24</span><span class="chip">TV5MONDE</span>
+      <span class="chip">TF1</span><span class="chip">M6</span><span class="chip">ARTE</span><span class="chip">DW</span><span class="chip">Euronews</span><span class="chip">RAI 1</span><span class="chip">RAI 2</span><span class="chip">RAI 3</span><span class="chip">Canale 5</span><span class="chip">Italia 1</span><span class="chip">RTVE La 1</span><span class="chip">La 2</span>
+      <span class="chip">Antena 3</span><span class="chip">Telecinco</span><span class="chip">TRT 1</span><span class="chip">TRT World</span><span class="chip">Star TV Turkey</span><span class="chip">Kanal D</span><span class="chip">ATV Turkey</span><span class="chip">Show TV</span><span class="chip">NHK World</span><span class="chip">Arirang</span><span class="chip">KBS World</span><span class="chip">Sony TV</span>
+      <span class="chip">Zee TV</span><span class="chip">Star Plus</span><span class="chip">Colors TV</span><span class="chip">TV Globo</span><span class="chip">Telemundo</span><span class="chip">Univision</span><span class="chip">Caracol TV</span><span class="chip">RCN</span>
+    </div></div>
   </div>
 </section>
 
 <section class="panel" id="movies">
   <h2 data-en="Movies & Series" data-ar="أفلام ومسلسلات">Movies & Series</h2>
-  <p class="intro" data-en="Arabic, American and international movie and series libraries, with new content added regularly." data-ar="مكتبات أفلام ومسلسلات عربية وأمريكية وعالمية، ويتم إضافة محتوى جديد باستمرار.">Arabic, American and international movie and series libraries, with new content added regularly.</p>
+  <p class="intro" data-en="Arabic, American and international movie and series libraries, organized by region and genre." data-ar="مكتبات أفلام ومسلسلات عربية وأمريكية وعالمية، مرتبة حسب المنطقة والنوع.">Arabic, American and international movie and series libraries, organized by region and genre.</p>
   <div class="grid">
-    <div class="card"><h3 data-en="Arabic" data-ar="عربي">Arabic</h3><ul><li data-en="Arabic movies" data-ar="أفلام عربية">Arabic movies</li><li data-en="Egyptian movies" data-ar="أفلام مصرية">Egyptian movies</li><li data-en="Arabic drama series" data-ar="مسلسلات دراما عربية">Arabic drama series</li><li data-en="Ramadan series" data-ar="مسلسلات رمضان">Ramadan series</li><li data-en="Comedy and classic titles" data-ar="كوميديا وأعمال كلاسيكية">Comedy and classic titles</li></ul></div>
-    <div class="card"><h3 data-en="American" data-ar="أمريكي">American</h3><ul><li data-en="Hollywood movies" data-ar="أفلام هوليوود">Hollywood movies</li><li data-en="Action and adventure" data-ar="أكشن ومغامرات">Action and adventure</li><li data-en="Drama and comedy" data-ar="دراما وكوميديا">Drama and comedy</li><li data-en="TV series" data-ar="مسلسلات تلفزيونية">TV series</li><li data-en="Family and animation" data-ar="عائلي ورسوم متحركة">Family and animation</li></ul></div>
-    <div class="card"><h3 data-en="International" data-ar="عالمي">International</h3><ul><li data-en="European movies & series" data-ar="أفلام ومسلسلات أوروبية">European movies & series</li><li data-en="Turkish series" data-ar="مسلسلات تركية">Turkish series</li><li data-en="Korean series" data-ar="مسلسلات كورية">Korean series</li><li data-en="Indian movies & series" data-ar="أفلام ومسلسلات هندية">Indian movies & series</li><li data-en="Latin and other international titles" data-ar="أعمال لاتينية وعالمية أخرى">Latin and other international titles</li></ul></div>
+    <div class="card"><h3 data-en="Arabic Movies & Series" data-ar="أفلام ومسلسلات عربية">Arabic Movies & Series</h3>
+      <h4 data-en="Movies" data-ar="أفلام">Movies</h4><div class="chiplist"><span class="chip">Egyptian Movies</span><span class="chip">Gulf Movies</span><span class="chip">Lebanese Movies</span><span class="chip">Syrian Movies</span><span class="chip">Moroccan Movies</span><span class="chip">Classic Arabic Cinema</span><span class="chip">Arabic Comedy</span><span class="chip">Arabic Action</span><span class="chip">Arabic Romance</span><span class="chip">Arabic Drama</span><span class="chip">Family Movies</span></div>
+      <h4 data-en="Series" data-ar="مسلسلات">Series</h4><div class="chiplist"><span class="chip">Egyptian Series</span><span class="chip">Ramadan Series</span><span class="chip">Gulf Series</span><span class="chip">Syrian Drama</span><span class="chip">Lebanese Series</span><span class="chip">Arabic Comedy Series</span><span class="chip">Arabic Crime Series</span><span class="chip">Arabic Historical Series</span><span class="chip">Arabic Classics</span></div>
+    </div>
+
+    <div class="card"><h3 data-en="American Movies & Series" data-ar="أفلام ومسلسلات أمريكية">American Movies & Series</h3>
+      <h4 data-en="Movies" data-ar="أفلام">Movies</h4><div class="chiplist"><span class="chip">Hollywood New Releases</span><span class="chip">Action</span><span class="chip">Adventure</span><span class="chip">Comedy</span><span class="chip">Drama</span><span class="chip">Crime</span><span class="chip">Thriller</span><span class="chip">Horror</span><span class="chip">Science Fiction</span><span class="chip">Fantasy</span><span class="chip">Romance</span><span class="chip">Family</span><span class="chip">Animation</span><span class="chip">Documentary</span><span class="chip">Classic Movies</span></div>
+      <h4 data-en="Series" data-ar="مسلسلات">Series</h4><div class="chiplist"><span class="chip">Drama Series</span><span class="chip">Comedy Series</span><span class="chip">Crime Series</span><span class="chip">Action Series</span><span class="chip">Sci-Fi Series</span><span class="chip">Fantasy Series</span><span class="chip">Reality TV</span><span class="chip">Documentary Series</span><span class="chip">Kids Series</span><span class="chip">Classic TV</span></div>
+    </div>
+
+    <div class="card"><h3 data-en="International Movies & Series" data-ar="أفلام ومسلسلات عالمية">International Movies & Series</h3>
+      <h4 data-en="Regions" data-ar="المناطق">Regions</h4><div class="chiplist"><span class="chip">Turkish</span><span class="chip">Korean</span><span class="chip">Indian / Bollywood</span><span class="chip">British</span><span class="chip">French</span><span class="chip">Italian</span><span class="chip">Spanish</span><span class="chip">German</span><span class="chip">Latin American</span><span class="chip">Brazilian</span><span class="chip">Japanese</span><span class="chip">Chinese</span><span class="chip">Thai</span><span class="chip">Pakistani</span><span class="chip">African</span></div>
+      <h4 data-en="Popular categories" data-ar="تصنيفات مشهورة">Popular categories</h4><div class="chiplist"><span class="chip">Turkish Drama</span><span class="chip">K-Drama</span><span class="chip">Bollywood Movies</span><span class="chip">European Cinema</span><span class="chip">Spanish Series</span><span class="chip">Latin Telenovelas</span><span class="chip">Anime</span><span class="chip">International Documentaries</span></div>
+    </div>
   </div>
 </section>
 
 <section class="panel" id="sports">
   <h2 data-en="Sports Channels" data-ar="القنوات الرياضية">Sports Channels</h2>
-  <p class="intro" data-en="Sports networks from the Arab world, the United States and international markets. Availability can vary by package and region." data-ar="قنوات رياضية عربية وأمريكية وعالمية. التوفر قد يختلف حسب الباقة والمنطقة.">Sports networks from the Arab world, the United States and international markets.</p>
+  <p class="intro" data-en="Sports networks and sports categories from the Arab world, the United States and international markets. Availability can vary by package and region." data-ar="قنوات وتصنيفات رياضية عربية وأمريكية وعالمية. التوفر قد يختلف حسب الباقة والمنطقة.">Sports networks from the Arab world, the United States and international markets.</p>
   <div class="grid">
-    <div class="card"><h3 data-en="Arabic Sports" data-ar="رياضة عربية">Arabic Sports</h3><div class="chiplist"><span class="chip">beIN SPORTS</span><span class="chip">SSC</span><span class="chip">Abu Dhabi Sports</span><span class="chip">Dubai Sports</span><span class="chip">Al Kass Sports</span><span class="chip">ON Time Sports</span></div></div>
-    <div class="card"><h3 data-en="U.S. Sports" data-ar="رياضة أمريكية">U.S. Sports</h3><div class="chiplist"><span class="chip">ESPN</span><span class="chip">ESPN2</span><span class="chip">FS1</span><span class="chip">FS2</span><span class="chip">CBS Sports Network</span><span class="chip">Golf Channel</span><span class="chip">NFL Network</span><span class="chip">NBA TV</span><span class="chip">MLB Network</span><span class="chip">NHL Network</span></div></div>
-    <div class="card"><h3 data-en="International Sports" data-ar="رياضة عالمية">International Sports</h3><div class="chiplist"><span class="chip">Sky Sports</span><span class="chip">TNT Sports</span><span class="chip">Eurosport</span><span class="chip">DAZN</span><span class="chip">SuperSport</span><span class="chip">Sport TV</span></div></div>
+    <div class="card"><h3 data-en="Arabic Sports" data-ar="رياضة عربية">Arabic Sports</h3><div class="chiplist">
+      <span class="chip">beIN SPORTS 1</span><span class="chip">beIN SPORTS 2</span><span class="chip">beIN SPORTS 3</span><span class="chip">beIN SPORTS 4</span><span class="chip">beIN SPORTS 5</span><span class="chip">beIN SPORTS 6</span><span class="chip">beIN SPORTS 7</span><span class="chip">beIN SPORTS Premium</span><span class="chip">beIN SPORTS News</span><span class="chip">SSC 1</span><span class="chip">SSC Extra</span><span class="chip">Abu Dhabi Sports 1</span><span class="chip">Abu Dhabi Sports 2</span><span class="chip">Dubai Sports 1</span><span class="chip">Dubai Sports 2</span><span class="chip">Al Kass 1</span><span class="chip">Al Kass 2</span><span class="chip">ON Time Sports 1</span><span class="chip">ON Time Sports 2</span><span class="chip">Kuwait Sports</span><span class="chip">Jordan Sports</span><span class="chip">Oman Sports</span><span class="chip">Bahrain Sports</span><span class="chip">Arryadia Morocco</span>
+    </div></div>
+
+    <div class="card"><h3 data-en="U.S. Sports" data-ar="رياضة أمريكية">U.S. Sports</h3><div class="chiplist">
+      <span class="chip">ESPN</span><span class="chip">ESPN2</span><span class="chip">ESPNews</span><span class="chip">ESPNU</span><span class="chip">Fox Sports 1</span><span class="chip">Fox Sports 2</span><span class="chip">CBS Sports Network</span><span class="chip">NBC Sports</span><span class="chip">NFL Network</span><span class="chip">NBA TV</span><span class="chip">MLB Network</span><span class="chip">NHL Network</span><span class="chip">Golf Channel</span><span class="chip">Tennis Channel</span><span class="chip">Big Ten Network</span><span class="chip">SEC Network</span><span class="chip">ACC Network</span><span class="chip">MotorTrend</span><span class="chip">TUDN</span><span class="chip">Univision Deportes</span>
+    </div></div>
+
+    <div class="card"><h3 data-en="International Sports" data-ar="رياضة عالمية">International Sports</h3><div class="chiplist">
+      <span class="chip">Sky Sports Main Event</span><span class="chip">Sky Sports Premier League</span><span class="chip">Sky Sports Football</span><span class="chip">Sky Sports F1</span><span class="chip">Sky Sports Cricket</span><span class="chip">TNT Sports</span><span class="chip">Eurosport 1</span><span class="chip">Eurosport 2</span><span class="chip">DAZN</span><span class="chip">SuperSport</span><span class="chip">Canal+ Sport</span><span class="chip">RMC Sport</span><span class="chip">Sport TV Portugal</span><span class="chip">Movistar Deportes</span><span class="chip">ESPN Deportes</span><span class="chip">Star Sports</span><span class="chip">Sony Sports</span><span class="chip">Premier Sports</span><span class="chip">TSN</span><span class="chip">Sportsnet</span>
+      <span class="chip">Football / Soccer</span><span class="chip">NFL</span><span class="chip">NBA</span><span class="chip">MLB</span><span class="chip">NHL</span><span class="chip">UFC / MMA</span><span class="chip">Boxing</span><span class="chip">Formula 1</span><span class="chip">MotoGP</span><span class="chip">Tennis</span><span class="chip">Golf</span><span class="chip">Cricket</span><span class="chip">Rugby</span><span class="chip">Wrestling</span>
+    </div></div>
   </div>
 </section>
 
@@ -102,30 +140,42 @@ body{font-family:Arial,Helvetica,sans-serif;color:#fff}
   <a class="wa-btn" id="contactButton" target="_blank" rel="noopener" data-en="Chat on WhatsApp" data-ar="تواصل عبر واتساب">Chat on WhatsApp</a>
 </section>
 </div>
+
 <a class="floating-wa" id="floatingWa" target="_blank" rel="noopener">WhatsApp</a>
+
 <script>
 const WA="201224142081";
 let lang=localStorage.getItem("rockLang")||"en";
 const wa=(m)=>"https://wa.me/"+WA+"?text="+encodeURIComponent(m);
 
-function closePanels(){document.querySelectorAll('.panel').forEach(p=>p.classList.remove('open'));document.querySelectorAll('.navlinks button').forEach(b=>b.classList.remove('active'));}
-function showSection(id,btn){
-  if(id==='home'){closePanels();document.getElementById('home').scrollIntoView({behavior:'smooth'});return;}
-  const panel=document.getElementById(id);const wasOpen=panel.classList.contains('open');closePanels();
-  if(!wasOpen){panel.classList.add('open');btn.classList.add('active');setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'start'}),30);}
-}
-document.querySelectorAll('[data-target]').forEach(btn=>btn.addEventListener('click',()=>showSection(btn.dataset.target,btn)));
-
 function applyLang(l){
-  lang=l;localStorage.setItem("rockLang",lang);document.documentElement.lang=lang;document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+  lang=l;
+  localStorage.setItem("rockLang",lang);
+  document.documentElement.lang=lang;
+  document.documentElement.dir=lang==="ar"?"rtl":"ltr";
   document.querySelectorAll("[data-en]").forEach(el=>{el.textContent=lang==="ar"?el.dataset.ar:el.dataset.en;});
   document.getElementById("langBtn").textContent=lang==="ar"?"EN":"عربي";
   document.getElementById("floatingWa").textContent=lang==="ar"?"واتساب":"WhatsApp";
-  document.querySelectorAll('.order').forEach(a=>a.textContent=lang==='ar'?'اطلب الآن':'Order');
   const generalMsg=lang==="ar"?"مرحباً، أريد معلومات أكثر عن THE ROCK TV":"Hello, I want more information about THE ROCK TV";
-  document.getElementById("contactTop").href=wa(generalMsg);document.getElementById("contactButton").href=wa(generalMsg);document.getElementById("floatingWa").href=wa(generalMsg);
+  document.getElementById("contactTop").href=wa(generalMsg);
+  document.getElementById("contactButton").href=wa(generalMsg);
+  document.getElementById("floatingWa").href=wa(generalMsg);
   document.querySelectorAll("[data-plan]").forEach(a=>{const p=a.dataset.plan,price=a.dataset.price;a.href=wa(`Hello, I want to order the ${p} package for ${price}.\nمرحباً، أريد طلب باقة ${p} بسعر ${price}.`);});
 }
+
+function showPanel(target){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('open'));
+  document.querySelectorAll('.navlinks button').forEach(b=>b.classList.remove('active'));
+  if(target==='home'){
+    document.getElementById('home').scrollIntoView({behavior:'smooth',block:'start'});
+    return;
+  }
+  const panel=document.getElementById(target);
+  if(panel){panel.classList.add('open');panel.scrollIntoView({behavior:'smooth',block:'start'});}
+  const btn=document.querySelector(`[data-target="${target}"]`);if(btn)btn.classList.add('active');
+}
+
+document.querySelectorAll('[data-target]').forEach(btn=>btn.addEventListener('click',()=>showPanel(btn.dataset.target)));
 document.getElementById("langBtn").addEventListener("click",()=>applyLang(lang==="en"?"ar":"en"));
 applyLang(lang);
 </script>
