@@ -9,7 +9,19 @@
 <link rel="icon" href="/icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/icon.svg">
 <style>
-*{box-sizing:border-box}body{margin:0;background:#03111f;color:#fff;font-family:Arial,Helvetica,sans-serif;min-height:100vh;display:grid;place-items:center;padding:24px}.card{width:min(680px,100%);background:#071421;border:1px solid rgba(243,200,79,.45);border-radius:24px;padding:30px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.35)}img{width:150px;height:150px;border-radius:28px}.title{color:#f3c84f;font-size:34px;font-weight:900;margin:18px 0 8px}.sub{color:#d9e2ea;line-height:1.6}.steps{margin:24px auto;text-align:left;max-width:520px;line-height:1.75;background:#0a1d31;padding:18px 22px;border-radius:16px}.btn{display:inline-block;background:#19c463;color:#fff;text-decoration:none;font-weight:900;padding:14px 22px;border-radius:999px;margin-top:8px}.small{font-size:13px;color:#aab9c5;margin-top:18px}
+*{box-sizing:border-box}
+body{margin:0;background:#03111f;color:#fff;font-family:Arial,Helvetica,sans-serif;min-height:100vh;display:grid;place-items:center;padding:24px}
+.card{width:min(680px,100%);background:#071421;border:1px solid rgba(243,200,79,.45);border-radius:24px;padding:30px;text-align:center;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+img{width:150px;height:150px;border-radius:28px}
+.title{color:#f3c84f;font-size:34px;font-weight:900;margin:18px 0 8px}
+.sub{color:#d9e2ea;line-height:1.6}
+.steps{margin:24px auto;text-align:left;max-width:520px;line-height:1.75;background:#0a1d31;padding:18px 22px;border-radius:16px}
+.install-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;background:#19c463;color:#fff;font-weight:900;font-size:18px;padding:15px 30px;border-radius:999px;margin-top:8px;cursor:pointer;box-shadow:0 10px 28px rgba(25,196,99,.28)}
+.install-btn:hover{transform:translateY(-1px)}
+.install-btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.open-btn{display:inline-block;color:#f3c84f;text-decoration:none;font-weight:800;margin-top:18px}
+.msg{min-height:24px;margin-top:14px;color:#f3cf6a;font-weight:700;line-height:1.5}
+.small{font-size:13px;color:#aab9c5;margin-top:18px}
 </style>
 </head>
 <body>
@@ -17,15 +29,70 @@
   <img src="/icon.svg" alt="THE ROCK TV icon">
   <div class="title">THE ROCK TV</div>
   <p class="sub">Install THE ROCK TV on your phone for free and open it like an app.</p>
+
+  <button class="install-btn" id="installBtn" type="button">⬇ Install THE ROCK TV</button>
+  <div class="msg" id="installMsg"></div>
+
   <div class="steps">
     <b>iPhone / iPad:</b><br>Open this page in Safari → Share → Add to Home Screen → Add.<br><br>
-    <b>Samsung / Android:</b><br>Open this page in Chrome → menu ⋮ → Add to Home screen or Install app.
+    <b>Samsung / Android:</b><br>Tap the green Install button above. If your browser does not show the install prompt, open the Chrome menu ⋮ → Add to Home screen / Install app.
   </div>
-  <a class="btn" href="/">Open THE ROCK TV</a>
+
+  <a class="open-btn" href="/">Open THE ROCK TV</a>
   <div class="small">No App Store or Google Play account is required for this free version.</div>
 </div>
 <script>
 if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}
+
+let deferredPrompt=null;
+const installBtn=document.getElementById('installBtn');
+const installMsg=document.getElementById('installMsg');
+const isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent);
+const isStandalone=window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone===true;
+
+if(isStandalone){
+  installBtn.textContent='✓ THE ROCK TV is installed';
+  installBtn.disabled=true;
+  installMsg.textContent='The app is already installed on this device.';
+}
+
+window.addEventListener('beforeinstallprompt',(e)=>{
+  e.preventDefault();
+  deferredPrompt=e;
+  if(!isStandalone){
+    installBtn.disabled=false;
+    installBtn.textContent='⬇ Install THE ROCK TV';
+    installMsg.textContent='';
+  }
+});
+
+installBtn.addEventListener('click',async()=>{
+  if(isStandalone) return;
+
+  if(deferredPrompt){
+    deferredPrompt.prompt();
+    const choice=await deferredPrompt.userChoice;
+    if(choice.outcome==='accepted'){
+      installMsg.textContent='Installing THE ROCK TV…';
+    }else{
+      installMsg.textContent='Installation was cancelled.';
+    }
+    deferredPrompt=null;
+    return;
+  }
+
+  if(isIOS){
+    installMsg.textContent='On iPhone: tap Share ⬆️, then “Add to Home Screen”, then Add.';
+  }else{
+    installMsg.textContent='Open the Chrome menu ⋮ and choose “Install app” or “Add to Home screen”.';
+  }
+});
+
+window.addEventListener('appinstalled',()=>{
+  installBtn.textContent='✓ THE ROCK TV is installed';
+  installBtn.disabled=true;
+  installMsg.textContent='Installation complete.';
+});
 </script>
 </body>
 </html>
