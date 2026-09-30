@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="92" fill="#03111f"/>
-  <g fill="none" stroke="#f3c84f" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M170 126 L205 98 L232 126 L256 78 L280 126 L307 98 L342 126 L329 173 L183 173 Z" fill="#f3c84f" stroke-width="6"/>
-    <circle cx="170" cy="123" r="7" fill="#f3c84f" stroke="none"/>
-    <circle cx="205" cy="95" r="7" fill="#f3c84f" stroke="none"/>
-    <circle cx="256" cy="74" r="8" fill="#f3c84f" stroke="none"/>
-    <circle cx="307" cy="95" r="7" fill="#f3c84f" stroke="none"/>
-    <circle cx="342" cy="123" r="7" fill="#f3c84f" stroke="none"/>
-    <path d="M132 244 L205 166 L238 204 L269 166 L380 244 L325 226 L291 241 L258 211 L226 242 L192 226 Z" fill="#f3c84f" stroke-width="4"/>
-    <path d="M177 239 L212 199 L238 225 L266 195 L324 239" stroke="#03111f" stroke-width="14"/>
-  </g>
-  <text x="256" y="332" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="62" font-weight="900" fill="#f3c84f">THE ROCK</text>
-  <text x="256" y="401" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="76" font-weight="900" fill="#f3c84f">TV</text>
-  <text x="256" y="446" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700" letter-spacing="4" fill="#ffffff">PREMIUM IPTV</text>
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#ffe56c"/>
+    <stop offset="0.5" stop-color="#f3c84f"/>
+    <stop offset="1" stop-color="#c99418"/>
+  </linearGradient>
+</defs>
+<rect width="512" height="512" rx="76" fill="#03111f"/>
+<g fill="url(#g)" stroke="url(#g)" stroke-linejoin="round">
+  <path d="M153 91l30 27 24-49 31 42 18-58 18 58 31-42 24 49 30-27-13 70H166z" stroke-width="6"/>
+  <path d="M92 240l95-102 55 53 42-55 136 151-84-47-49 35-42-42-64 61z" fill="none" stroke-width="20" stroke-linecap="round"/>
+</g>
+<text x="256" y="355" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="76" font-weight="900" fill="#f3c84f">THE ROCK</text>
+<text x="256" y="435" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="94" font-weight="900" fill="#f3c84f">TV</text>
 </svg>
