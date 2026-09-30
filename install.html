@@ -16,11 +16,11 @@ img{width:150px;height:150px;border-radius:28px}
 .title{color:#f3c84f;font-size:34px;font-weight:900;margin:18px 0 8px}
 .sub{color:#d9e2ea;line-height:1.6}
 .steps{margin:24px auto;text-align:left;max-width:520px;line-height:1.75;background:#0a1d31;padding:18px 22px;border-radius:16px}
-.install-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border:0;background:#19c463;color:#fff;font-weight:900;font-size:18px;padding:15px 30px;border-radius:999px;margin-top:8px;cursor:pointer;box-shadow:0 10px 28px rgba(25,196,99,.28)}
-.install-btn:hover{transform:translateY(-1px)}
-.install-btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.install-link{appearance:none;border:0;background:transparent;color:#0a84ff;font-weight:600;font-size:24px;padding:6px 0;margin:10px 0 2px;cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+.install-link:hover{color:#4aa3ff}
+.install-link:disabled{opacity:.55;cursor:default}
 .open-btn{display:inline-block;color:#f3c84f;text-decoration:none;font-weight:800;margin-top:18px}
-.msg{min-height:24px;margin-top:14px;color:#f3cf6a;font-weight:700;line-height:1.5}
+.msg{min-height:24px;margin-top:12px;color:#f3cf6a;font-weight:700;line-height:1.5}
 .small{font-size:13px;color:#aab9c5;margin-top:18px}
 </style>
 </head>
@@ -30,12 +30,12 @@ img{width:150px;height:150px;border-radius:28px}
   <div class="title">THE ROCK TV</div>
   <p class="sub">Install THE ROCK TV on your phone for free and open it like an app.</p>
 
-  <button class="install-btn" id="installBtn" type="button">⬇ Install THE ROCK TV</button>
+  <button class="install-link" id="installBtn" type="button">Install THE ROCK TV ›</button>
   <div class="msg" id="installMsg"></div>
 
   <div class="steps">
-    <b>iPhone / iPad:</b><br>Open this page in Safari → Share → Add to Home Screen → Add.<br><br>
-    <b>Samsung / Android:</b><br>Tap the green Install button above. If your browser does not show the install prompt, open the Chrome menu ⋮ → Add to Home screen / Install app.
+    <b>iPhone / iPad:</b><br>Tap “Install THE ROCK TV” above, then in Safari use Share → Add to Home Screen → Add.<br><br>
+    <b>Samsung / Android:</b><br>Tap “Install THE ROCK TV” above. If your browser does not show the install prompt, open the Chrome menu ⋮ → Install app / Add to Home screen.
   </div>
 
   <a class="open-btn" href="/">Open THE ROCK TV</a>
@@ -61,7 +61,7 @@ window.addEventListener('beforeinstallprompt',(e)=>{
   deferredPrompt=e;
   if(!isStandalone){
     installBtn.disabled=false;
-    installBtn.textContent='⬇ Install THE ROCK TV';
+    installBtn.textContent='Install THE ROCK TV ›';
     installMsg.textContent='';
   }
 });
